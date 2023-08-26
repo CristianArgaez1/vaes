@@ -1,103 +1,56 @@
-// Get the elements from the DOM
-const square1 = document.getElementById("square-1");
-const square2 = document.getElementById("square-2");
-const square3 = document.getElementById("square-3");
-const spotifyLogo = document.getElementById("spotify-logo");
-const emailLogo = document.getElementById("email-logo");
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAES - Vida, Amor + Esperanza Banda Ecuatoriana</title>
+  <meta name="description" content="Página web promocional de VAES, una banda ecuatoriana que ofrece vida, amor y esperanza a través de su música.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Define an array of photos to fill the wallpaper squares
-const photos = [
-  "photo-1.jpg",
-  "photo-2.jpg",
-  "photo-3.jpg",
-];
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCrWqM7Rrcf8Eldl0BhK9qGuWh-MimZKOA",
+    authDomain: "vaes-2eab8.firebaseapp.com",
+    projectId: "vaes-2eab8",
+    storageBucket: "vaes-2eab8.appspot.com",
+    messagingSenderId: "73192097468",
+    appId: "1:73192097468:web:6278d271e219e2993ef2b9"
+  };
 
-// Define a variable to keep track of the current photo index
-let photoIndex = -1;
-
-// Define a function to change the photo of a wallpaper square
-function changePhoto(square) {
-  
-  // Increment the photo index by one
-  photoIndex++;
-
-  // If the photo index is equal to the length of the photos array, reset it to zero
-  if (photoIndex === photos.length) {
-    photoIndex = 0;
-  }
-
-  // Get the photo from the photos array using the photo index
-  const photo = photos[photoIndex];
-
-  // Set the background image of the square element to the photo
-  square.style.backgroundImage = `url(${photo})`;
-}
-
-// Define a function to open the Spotify link in a new tab
-function openSpotify() {
-
-   // Define the Spotify link
-   const spotifyLink = "https://open.spotify.com/artist/5JZ7CnR6gTvEMKX4g70Amv";
-
-   // Open the Spotify link in a new tab
-   window.open(spotifyLink, "_blank");
-}
-
-// Define a function to copy the email address to the clipboard
-function copyEmail() {
-
-   // Define the email address
-   const emailAddress = "vaesagenda@gmail.com";
-
-   // Create a temporary input element
-   const input = document.createElement("input");
-
-   // Append the input element to the body element
-   document.body.appendChild(input);
-
-   // Set the value of the input element to the email address
-   input.value = emailAddress;
-
-   // Select the input element
-   input.select();
-
-   // Copy the input value to the clipboard
-   document.execCommand("copy");
-
-   // Remove the input element from the body element
-   document.body.removeChild(input);
-
-   // Alert the user that the email address has been copied
-   alert("El correo electrónico ha sido copiado al portapapeles.");
-}
-
-// Add event listeners to detect when the user clicks on each element
-square1.addEventListener("click", function() {
-  
-    // Call the changePhoto function with square1 as an argument
-    changePhoto(square1);
-});
-
-square2.addEventListener("click", function() {
-
-    // Call the changePhoto function with square2 as an argument
-    changePhoto(square2);
-});
-
-square3.addEventListener("click", function() {
-
-    // Call the changePhoto function with square3 as an argument
-    changePhoto(square3);
-});
-
-spotifyLogo.addEventListener("click", function() {
-
-    // Call the openSpotify function 
-    openSpotify();
-});
-
-emailLogo.addEventListener("click", function() {
-
-    // Call the copyEmail function 
-    copyEmail();
-});
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+<body>
+  <div class="container">
+    <h1 class="band-name">VAES</h1>
+    <img src="band-photo.jpg" alt="Foto de los integrantes de VAES con sus rostros difuminados" class="band-photo">
+    <p class="band-slogan">Vida, Amor + Esperanza</p>
+    <p class="band-slogan">Banda Ecuatoriana</p>
+    <p class="band-slogan"> </p>
+    <p class="band-slogan">FONDOS DE PANTALLA</p>
+    <div class="wallpaper-template">
+<div class="image-container">
+  <img src="imagen1.jpg" alt="Imagen 1">
+  <img src="imagen2.jpg" alt="Imagen 2">
+  <img src="imagen3.jpg" alt="Imagen 3">
+  <img src="imagen4.jpg" alt="Imagen 4">
+</div>
+    </div>
+    <div class="social-media">
+      <a href="https://www.instagram.com/vaesoficial/" target="_blank"><img src="instagram-logo.png" alt="Logo de Instagram" class="social-logo"></a>
+      <span class="social-text">@vaesoficial</span>
+      <img src="spotify-logo.png" alt="Logo de Spotify" class="social-logo" id="spotify-logo">
+      <span class="social-text">VAES</span>
+      <img src="email-logo.png" alt="Logo de correo electrónico" class="social-logo" id="email-logo">
+      <span class="social-text">vaesagenda@gmail.com</span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
