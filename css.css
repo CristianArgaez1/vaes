@@ -1,0 +1,103 @@
+/* Define custom properties for colors and fonts */
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --font-family: Arial, sans-serif;
+}
+
+/* Set the style for the body element */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+/* Set the style for the container element */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Set the style for the band name element */
+.band-name {
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Set the style for the band photo element */
+.band-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Set the style for the band slogan element */
+.band-slogan {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Set the style for the wallpaper template element */
+.wallpaper-template {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+/* Set the style for the wallpaper square elements */
+.wallpaper-square {
+  width: calc(33.33% - 10px);
+  height: 200px;
+  background-color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Set the style for the social media element */
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Set the style for the social logo elements */
+.social-logo {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Set the style for the social text elements */
+.social-text {
+  font-family: var(--font-family);
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+/* Use media queries to make the page responsive for smaller screens */
+@media screen and (max-width: 600px) {
+  
+  /* Reduce the font size of the band name element */
+  .band-name {
+    font-size: 36px;
+  }
+
+  /* Reduce the font size of the band slogan element */
+  .band-slogan {
+    font-size: 18px;
+  }
+
+  /* Reduce the height of the wallpaper square elements */
+  .wallpaper-square {
+    height: 150px;
+  }
+
+}
